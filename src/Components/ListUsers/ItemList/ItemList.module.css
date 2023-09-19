@@ -18,6 +18,9 @@
 }
 .itemList:hover {
   transform: scale(1.05);
+  @media (max-width: 570px) {
+    transform: scale(1);
+  }
 }
 
 .avatar {
@@ -27,7 +30,6 @@
 }
 
 .name {
-  
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

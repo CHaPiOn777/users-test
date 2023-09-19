@@ -1,0 +1,21 @@
+.pagination {
+  
+  margin-top: 40px;
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  justify-content: center;
+}
+.pageLink {
+  font-size: 24px;
+  font-style: normal;
+  line-height: 136.187%;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 3px;
+}
+.pageLinkActive{
+  text-decoration:underline ;
+  color: #007eff;
+}

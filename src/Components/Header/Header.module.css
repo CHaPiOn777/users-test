@@ -8,7 +8,9 @@
   color: var(--gray);
   font-family: "Roboto";
   text-align: center;
-
+  @media (max-width: 570px) {
+    padding: 12px 16px 64px;
+  }
 }
 
 .button {
@@ -17,25 +19,35 @@
   border: 1px solid var(--gray);
   border-radius: 8px;
   padding: 8px 16px;
-  background-color: transparent; 
+  background-color: transparent;
   font-size: 16px;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 400;
   line-height: 136.187%;
   align-self: flex-end;
-  transition: all .3s;
+  transition: all 0.3s;
+}
+.buttonSmall {
+  border: none;
 }
 
 .button:hover {
   background-color: var(--gray);
   color: var(--black);
+  @media (max-width: 570px) {
+    background-color: transparent;
+    color: var(--gray);
+  }
 }
 
-.title { 
+.title {
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media (max-width: 570px) {
+    font-size: 36px;
+  }
 }
 
 .description {
@@ -45,4 +57,7 @@
   font-weight: 400;
   line-height: normal;
   max-width: 846px;
+  @media (max-width: 570px) {
+    font-size: 16px;
+  }
 }

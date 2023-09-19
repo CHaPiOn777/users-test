@@ -20,9 +20,9 @@ export const UsersSlice = createSlice({
     usersFetching(state) {
       state.isLoading = true;
     },
-    usersFetchingSuccess(state, action: PayloadAction<TUsersAction>) {
+    usersFetchingSuccess(state, action: PayloadAction<TUser[]>) {
       state.isLoading = false;
-      state.users = action.payload.data;
+      state.users = action.payload;
       state.error = '';
     },
     usersFetchingError(state, action: PayloadAction<string>) {

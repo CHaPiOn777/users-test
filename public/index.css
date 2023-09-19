@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+:root {
+  --black: #151317;
+  --gray: #F8F8F8;
+  --violet: #512689;
+  --white: #FFF;
+}
+
+html,
+body {
+  padding: 10px;
+  background-color: var(--white);
+  margin: auto;
+  max-width: 1440px;
+}
+
+
+
+::-webkit-scrollbar {
+  border-radius: 3px;
+  width: 4px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #4C798F;
+
+}

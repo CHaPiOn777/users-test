@@ -4,13 +4,21 @@ import { TUsersAction, TUser } from "../../types/users-types";
 type TUsersState = {
   users: TUser[];
   isLoading: boolean;
-  error: string
+  error: string;
+  userById: TUser;
 }
 
 const initialState: TUsersState = {
   users: [],
   isLoading: false,
-  error: ''
+  error: '',
+  userById: {
+    id: 0,
+    email: "",
+    first_name: "",
+    last_name: "",
+    avatar: ""
+  }
 }
 
 export const UsersSlice = createSlice({
@@ -29,6 +37,10 @@ export const UsersSlice = createSlice({
       state.isLoading = true;
       state.error = action.payload;
     },
+
+    filterUserById(state, action: PayloadAction<number>) {
+      state.userById = state.users.filter(user => user.id === action.payload)[0]
+    }
   }
 })
 

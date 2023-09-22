@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchUsers } from '../../store/action-creator/ActionCreater';
-import Header from '../Header/Header';
 import ListUsers from '../ListUsers/ListUsers';
+import HeaderMain from '../ListUsers/HeaderMain/HeaderMain';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { router } from '../routes';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -17,12 +19,8 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchUsers())
   }, [])
-  
   return (
-    <div>
-      <Header></Header>
-      <ListUsers></ListUsers>
-    </div>
+    <RouterProvider router={router} />
   );
 };
 

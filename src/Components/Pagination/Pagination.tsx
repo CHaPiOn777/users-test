@@ -18,7 +18,6 @@ const Pagination: FC<TTotalUsers> = ({ totalUsers, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalUsers / Number(counterUsersInPage)); i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers)
   const onClick = (index: number, number: number,e: any) => {
     e.preventDefault();
     paginate(number);

@@ -1,16 +1,12 @@
-import React from "react";
-import styles from "./Header.module.css";
-import { Exit } from "../../img/Exit";
+import styles from "./HeaderMain.module.css";
+import ButtonExit from "../../ButtonExit/Button";
 
-const Header = () => {
-  const sizeWindow = localStorage.getItem("size");
-  
+const HeaderMain = () => {
+
 
   return (
     <header className={styles.header}>
-      <button className={sizeWindow === "small" ? `${styles.button} ${styles.buttonSmall}` : styles.button}>
-        {sizeWindow === "small" ? <Exit /> : "Выход"}
-      </button>
+      <ButtonExit type={'Выход'} />
       <h1 className={styles.title}>Наша команда</h1>
       <p className={styles.description}>
         Это опытные специалисты, хорошо разбирающиеся во&nbsp;всех задачах,
@@ -21,4 +17,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMain;

@@ -7,38 +7,12 @@
   align-items: center;
   color: var(--gray);
   font-family: "Roboto";
-  text-align: center;
+  text-align: center; 
   @media (max-width: 570px) {
     padding: 12px 16px 64px;
   }
 }
 
-.button {
-  cursor: pointer;
-  color: var(--gray);
-  border: 1px solid var(--gray);
-  border-radius: 8px;
-  padding: 8px 16px;
-  background-color: transparent;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 136.187%;
-  align-self: flex-end;
-  transition: all 0.3s;
-}
-.buttonSmall {
-  border: none;
-}
-
-.button:hover {
-  background-color: var(--gray);
-  color: var(--black);
-  @media (max-width: 570px) {
-    background-color: transparent;
-    color: var(--gray);
-  }
-}
 
 .title {
   font-size: 64px;

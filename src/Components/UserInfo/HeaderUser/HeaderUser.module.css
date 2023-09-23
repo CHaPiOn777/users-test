@@ -1,0 +1,75 @@
+
+.header {
+  padding: 32px 80px 39px;
+  display: flex;
+  background-color: var(--violet);
+  color: var(--white);
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+    padding: 12px 16px 64px;
+  }
+}
+.btn {
+  align-self: start;
+}
+.btn:last-of-type {
+  margin-left: auto;
+  @media (max-width: 1024px) {
+    margin: 0;
+  }
+}
+
+.user {
+  margin-left: 45px;
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    "img name"
+    "img role";
+  @media (max-width: 1024px) {
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
+    gap: 16px;
+    grid-template-areas:
+      "name"
+      "role"
+      "img";
+  }
+}
+
+.img {
+  grid-area: img;
+  width: 187px;
+  height: 187px;
+  border-radius: 100px;
+  margin-right: 32px;
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+  }
+}
+
+.name {
+  grid-area: name;
+  align-self: flex-end;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+}
+
+.role {
+  grid-area: role;
+  align-self: flex-start;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}

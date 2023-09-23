@@ -5,10 +5,13 @@ import ListUsers from '../ListUsers/ListUsers';
 import HeaderMain from '../ListUsers/HeaderMain/HeaderMain';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { router } from '../routes';
+import {RegisterUserSlice} from '../../store/reducers/RegisterUserSlice';
 
 const App = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();  
   const mq = window.matchMedia('(max-width: 570px)');
+  const token = localStorage.getItem('token')
+  const {registerFetchingSuccess} = RegisterUserSlice.actions
 
   if (mq.matches) {
     localStorage.setItem("size", 'small');
@@ -17,8 +20,12 @@ const App = () => {
   }
 
   useEffect(() => {
-    dispatch(fetchUsers())
+    dispatch(fetchUsers());
+    if (token) {
+      dispatch(registerFetchingSuccess(token));
+    }
   }, [])
+  
   return (
     <RouterProvider router={router} />
   );

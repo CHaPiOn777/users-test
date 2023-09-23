@@ -2,18 +2,18 @@ import React, { useEffect } from "react";
 import { redirect, useParams, useNavigate } from "react-router-dom";
 
 import styles from "./UserInfo.module.css";
-import Button from "../ButtonExit/Button";
+import Button from "../Button/ButtonExit/Button";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { UsersSlice } from "../../store/reducers/UsersSlice";
 import { Phone } from "../../img/Phone";
 import { Mail } from "../../img/Mail";
+import HeaderUser from "./HeaderUser/HeaderUser";
 
 const UserInfo = () => {
   const { userById, users } = useAppSelector((state) => state.usersReducer);
   const { filterUserById } = UsersSlice.actions;
   const { userId } = useParams();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(filterUserById(Number(userId)));
@@ -22,17 +22,7 @@ const UserInfo = () => {
   return (
     userById && (
       <>
-        <header className={styles.header}>
-          <Button type={"Назад"} className={styles.btn} onClick={() => navigate(-1)}/>
-          <div className={styles.user}>
-            <img src={userById.avatar} alt="avatar" className={styles.img} />
-            <h1
-              className={styles.name}
-            >{`${userById.first_name} ${userById.last_name}`}</h1>
-            <p className={styles.role}>Партнер</p>
-          </div>
-          <Button type={"Выход"} className={`${styles.btn}`} />
-        </header>
+        <HeaderUser />
         <main className={styles.main}>
           <div className={styles.descriptionContainer}>
             <p className={styles.description}>

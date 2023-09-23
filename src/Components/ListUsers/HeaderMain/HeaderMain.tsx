@@ -1,5 +1,5 @@
 import styles from "./HeaderMain.module.css";
-import ButtonExit from "../../ButtonExit/Button";
+import ButtonExit from "../../Button/ButtonExit/Button";
 
 const HeaderMain = () => {
 

@@ -1,0 +1,26 @@
+
+.input {
+  padding: 12px 8px 12px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--gray);
+  color: var(--black);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  outline: none;
+
+  transition: border .3s ease;
+}
+.inputError {
+  border: 1px solid var(--red);
+}
+.input:focus {
+  border: 1px solid var(--violet);
+}
+
+.span {
+  color: var(--red);
+  font-size: 10px;
+}

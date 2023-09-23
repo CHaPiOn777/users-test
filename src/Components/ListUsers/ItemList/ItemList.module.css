@@ -43,6 +43,7 @@
   background-color: transparent;
   border: none;
   transition: all 0.3s;
+  pointer-events: auto;
 }
 
 .btn:hover {

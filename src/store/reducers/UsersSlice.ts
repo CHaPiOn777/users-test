@@ -34,13 +34,25 @@ export const UsersSlice = createSlice({
       state.error = '';
     },
     usersFetchingError(state, action: PayloadAction<string>) {
-      state.isLoading = true;
+      state.isLoading = false;
       state.error = action.payload;
     },
-
     filterUserById(state, action: PayloadAction<number>) {
       state.userById = state.users.filter(user => user.id === action.payload)[0]
-    }
+    },
+    upsateUserAvatarFetching(state) {
+      state.isLoading = true;
+    },
+    upsateUserAvatarFetchingSuccess(state, action: PayloadAction<{avatar: string, id: number}>) {
+      state.isLoading = false;
+      const updateUser = state.users.find(el => el.id === action.payload.id);
+      updateUser!.avatar = action.payload.avatar;
+      state.error = '';
+    },
+    upsateUserAvatarFetchingError(state, action: PayloadAction<string>) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   }
 })
 

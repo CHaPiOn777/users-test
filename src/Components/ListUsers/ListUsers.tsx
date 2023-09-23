@@ -31,7 +31,7 @@ const ListUsers = () => {
         <ul className={styles.list}>
           {users &&
             currentUsers.map((user, index) => (
-              <Link to={`/${user.id}`} className={styles.link}>
+              
                 <ItemList
                   key={index}
                   id={user.id}
@@ -40,7 +40,7 @@ const ListUsers = () => {
                   last_name={user.last_name}
                   avatar={user.avatar}
                 />
-              </Link>
+        
             ))}
         </ul>
         <Pagination totalUsers={users.length} paginate={paginate} />

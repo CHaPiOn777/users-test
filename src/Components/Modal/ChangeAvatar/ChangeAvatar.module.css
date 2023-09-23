@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 360px;
+}
+
+.label {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.btn {
+  margin-top: 35px;
+}

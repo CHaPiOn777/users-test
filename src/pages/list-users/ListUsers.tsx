@@ -1,11 +1,10 @@
-import React, { SetStateAction, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { SetStateAction, useMemo, useState } from "react";
+
 import { useAppSelector } from "../../hooks/redux";
-import { Like } from "../../img/Like";
 import styles from "./ListUsers.module.css";
-import ItemList from "./ItemList/ItemList";
-import Pagination from "../Pagination/Pagination";
-import HeaderMain from "./HeaderMain/HeaderMain";
+import HeaderMain from "../../Components/ListUsers/HeaderMain/HeaderMain";
+import ItemList from "../../Components/ListUsers/ItemList/ItemList";
+import Pagination from "../../Components/Pagination/Pagination";
 
 const ListUsers = () => {
   const { users } = useAppSelector((state) => state.usersReducer);
@@ -31,16 +30,14 @@ const ListUsers = () => {
         <ul className={styles.list}>
           {users &&
             currentUsers.map((user, index) => (
-              
-                <ItemList
-                  key={index}
-                  id={user.id}
-                  email={user.email}
-                  first_name={user.first_name}
-                  last_name={user.last_name}
-                  avatar={user.avatar}
-                />
-        
+              <ItemList
+                key={index}
+                id={user.id}
+                email={user.email}
+                first_name={user.first_name}
+                last_name={user.last_name}
+                avatar={user.avatar}
+              />
             ))}
         </ul>
         <Pagination totalUsers={users.length} paginate={paginate} />

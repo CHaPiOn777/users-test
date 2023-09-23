@@ -1,16 +1,23 @@
-import React, { FC, MouseEvent, useState } from "react";
+import { FC, MouseEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./ItemList.module.css";
 import { TUser } from "../../../types/users-types";
 import { Like } from "../../../img/Like";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import { toggleLike } from "../../../store/action-creator/ActionCreater";
 
-const ItemList: FC<TUser> = ({ avatar, email, first_name, id, last_name }) => {
-  const [isLike, setIsLike] = useState<boolean>(false);
-  
+const ItemList: FC<TUser> = ({ avatar, first_name, id, last_name }) => {
+  const likes = useAppSelector((state) => state.usersReducer.likes);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    localStorage.setItem("likes", JSON.stringify(likes));
+  }, [likes]);
+
   const changeLike = (e: MouseEvent) => {
-    setIsLike(!isLike);
-    e.preventDefault()
+    dispatch(toggleLike(id));
+    e.preventDefault();
   };
 
   return (
@@ -24,7 +31,7 @@ const ItemList: FC<TUser> = ({ avatar, email, first_name, id, last_name }) => {
             changeLike(e);
           }}
         >
-          <Like fill={isLike} />
+          <Like fill={likes.includes(id) ? true : false} />
         </button>
       </li>
     </Link>

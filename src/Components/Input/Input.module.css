@@ -21,6 +21,8 @@
 }
 
 .span {
+  margin-top: 5px;
+  padding-left: 10px;
   color: var(--red);
-  font-size: 10px;
+  font-size: 11px;
 }

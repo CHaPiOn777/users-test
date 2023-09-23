@@ -1,16 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { TUsersAction, TUser } from "../../types/users-types";
+import { TUser } from "../../types/users-types";
+
+type TLikes = {
+  id: number; 
+  flag: boolean
+}
 
 type TUsersState = {
   users: TUser[];
   isLoading: boolean;
   error: string;
   userById: TUser;
+  likes: number[];
 }
 
 const initialState: TUsersState = {
   users: [],
-  isLoading: false,
+  isLoading: true,
   error: '',
   userById: {
     id: 0,
@@ -18,7 +24,8 @@ const initialState: TUsersState = {
     first_name: "",
     last_name: "",
     avatar: ""
-  }
+  },
+  likes: []
 }
 
 export const UsersSlice = createSlice({
@@ -40,6 +47,7 @@ export const UsersSlice = createSlice({
     filterUserById(state, action: PayloadAction<number>) {
       state.userById = state.users.filter(user => user.id === action.payload)[0]
     },
+
     upsateUserAvatarFetching(state) {
       state.isLoading = true;
     },
@@ -53,6 +61,15 @@ export const UsersSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+
+    setLikes(state, action: PayloadAction<number>) {
+      state.likes.includes(action.payload) ? 
+      state.likes = state.likes.filter(item => item !== action.payload) : 
+      state.likes.push(action.payload)
+    },
+    addLocalLikes(state, action: PayloadAction<number[]>) {
+      state.likes = action.payload
+    }
   }
 })
 

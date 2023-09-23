@@ -49,3 +49,8 @@
 .btn:hover {
   opacity: 0.5;
 }
+
+.link {
+  color: var(--black);
+  text-decoration: none;
+}

@@ -44,9 +44,15 @@
   height: 187px;
   border-radius: 100px;
   margin-right: 32px;
+  cursor: pointer;
+  transition: all .3s;
   @media (max-width: 1024px) {
     margin: 0 auto;
   }
+}
+
+.img:hover {
+  transform: scale(1.05);
 }
 
 .name {

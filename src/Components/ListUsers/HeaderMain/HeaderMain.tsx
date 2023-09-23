@@ -1,9 +1,7 @@
 import styles from "./HeaderMain.module.css";
-import ButtonExit from "../../Button/ButtonExit/Button";
+import ButtonExit from "../../Buttons/ButtonExit/Button";
 
 const HeaderMain = () => {
-
-
   return (
     <header className={styles.header}>
       <ButtonExit type={'Выход'} />

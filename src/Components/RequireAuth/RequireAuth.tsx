@@ -1,4 +1,4 @@
-import { FC, ReactElement, ReactNode } from "react";
+import { FC, ReactElement } from "react";
 import { useLocation, Navigate } from "react-router-dom";
 
 type TRequireAuth = {
@@ -8,7 +8,6 @@ type TRequireAuth = {
 const RequireAuth: FC<TRequireAuth> = ({ children }) => {
   const location = useLocation();
   const token = localStorage.getItem("token");
-  console.log(token)
   if (!token) {
     return <Navigate to="/signUp" state={{ from: location }} />;
   }

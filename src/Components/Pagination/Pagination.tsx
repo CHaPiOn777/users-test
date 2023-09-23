@@ -1,5 +1,4 @@
 import { FC, SetStateAction, useState } from "react";
-import { useAppSelector } from "../../hooks/redux";
 import styles from "./Pagination.module.css";
 
 type TTotalUsers = {
@@ -8,7 +7,6 @@ type TTotalUsers = {
 };
 
 const Pagination: FC<TTotalUsers> = ({ totalUsers, paginate }) => {
-  // const { users } = useAppSelector((state) => state.usersReducer);
   const [activeIndex, setActiveIndex] = useState<number>(Number);
   const sizeWindow = localStorage.getItem('size');
   const counterUsersInPage = sizeWindow === 'small' ? 4 : 6;

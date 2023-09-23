@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { TUsersAction, TUser } from "../../types/users-types";
 
 type TUsersState = {
   token: string;

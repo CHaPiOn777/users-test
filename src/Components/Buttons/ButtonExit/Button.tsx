@@ -1,5 +1,6 @@
-import React, { useEffect, FC, HTMLProps, MouseEvent } from "react";
-import {useNavigate, useLocation} from 'react-router-dom'
+import React, { useEffect, FC, MouseEvent } from "react";
+import {useNavigate, useLocation} from 'react-router-dom';
+
 import styles from "./Button.module.css";
 import { Exit } from "../../../img/Exit";
 import { Back } from "../../../img/Back";

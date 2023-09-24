@@ -16,9 +16,9 @@ const ChangeAvatar:FC<TModal> = ({setActive, active}) => {
   const { userId } = useParams();
   const dispatch = useAppDispatch();
 
-  const onSubmitAvatar = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmitAvatar = async(e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(putchAvatar(avatar.value, Number(userId)));
+    await dispatch(putchAvatar(avatar.value, Number(userId)));
     setActive(!active)
   }
   return (

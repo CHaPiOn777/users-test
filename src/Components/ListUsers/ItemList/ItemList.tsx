@@ -31,7 +31,7 @@ const ItemList: FC<TUser> = ({ avatar, first_name, id, last_name }) => {
             changeLike(e);
           }}
         >
-          <Like fill={likes.includes(id) ? true : false} />
+          <Like fill={likes && likes.includes(id) ? true : false} />
         </button>
       </li>
     </Link>

@@ -1,11 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { TUser } from "../../types/users-types";
 
-type TLikes = {
-  id: number; 
-  flag: boolean
-}
-
 type TUsersState = {
   users: TUser[];
   isLoading: boolean;
@@ -52,10 +47,10 @@ export const UsersSlice = createSlice({
       state.isLoading = true;
     },
     upsateUserAvatarFetchingSuccess(state, action: PayloadAction<{avatar: string, id: number}>) {
-      state.isLoading = false;
       const updateUser = state.users.find(el => el.id === action.payload.id);
       updateUser!.avatar = action.payload.avatar;
       state.error = '';
+      state.isLoading = false;
     },
     upsateUserAvatarFetchingError(state, action: PayloadAction<string>) {
       state.isLoading = false;

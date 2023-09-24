@@ -1,4 +1,4 @@
-import { RouteObject, createBrowserRouter } from "react-router-dom";
+import { RouteObject, createBrowserRouter, createHashRouter } from "react-router-dom";
 import Root from "../Root/Root";
 import ErrorPage from "../Error/ErrorPage";
 import SignUp from "../../pages/signUp/SignUp";
@@ -29,4 +29,4 @@ const routes: RouteObject[] = [
   },
 ];
 
-export const router = createBrowserRouter(routes);
+export const router = createHashRouter(routes);

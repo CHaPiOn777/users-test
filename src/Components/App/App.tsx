@@ -12,10 +12,14 @@ const App = () => {
   const token = localStorage.getItem('token')
   const {registerFetchingSuccess} = RegisterUserSlice.actions
   const likesLocal = localStorage.getItem('likes');
+  let numberLikesLocal:any = [];
   //так как в localStorage тип данных строка, нужно изменить тип данных на Number каждого элемента
-  const numberLikesLocal = JSON.parse(likesLocal!).map((item: string) => {
-    return Number(item)
-  })
+
+  if (likesLocal) {
+    numberLikesLocal = JSON.parse(likesLocal).map((item: string) => {
+      return Number(item)
+    })
+  }
 
   if (mq.matches) {
     localStorage.setItem("size", 'small');

@@ -14,4 +14,4 @@
 React, Redax-toolkit, TypeScript, react-router-dom v6, axios
 
 #
-* [Ссылка на проект](https://chapion777.github.io/counter/)
+* [Ссылка на проект](https://chapion777.github.io/users-test/)
